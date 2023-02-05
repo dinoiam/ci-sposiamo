@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ci-sposiamo/static/css/main.7107b33d.css",
+    "main.js": "/ci-sposiamo/static/js/main.40ceb8c5.js",
+    "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/ci-sposiamo/static/media/Montserrat-Italic-VariableFont_wght.ef11b720b9a6cfb9a317.ttf",
+    "static/media/MoonDance-Regular.ttf": "/ci-sposiamo/static/media/MoonDance-Regular.69bc2883db3811002422.ttf",
+    "static/media/plane.svg": "/ci-sposiamo/static/media/plane.59e716c6e3ac776e32becb8e65298faf.svg",
+    "static/media/divider.png": "/ci-sposiamo/static/media/divider.a3523741ef8dcccd5159.png",
+    "static/media/cloud.png": "/ci-sposiamo/static/media/cloud.18c7f8dba894e3ebfb9d.png",
+    "static/media/man.svg": "/ci-sposiamo/static/media/man.f1dd5d5284a3023d6a0c8802db12b60b.svg",
+    "static/media/gabriella.svg": "/ci-sposiamo/static/media/gabriella.6cac9a9c7ccb81f95c04e8720ba2f092.svg",
+    "static/media/ring.svg": "/ci-sposiamo/static/media/ring.674811721061b6a6d25531b01d0941a7.svg",
+    "static/media/woman.svg": "/ci-sposiamo/static/media/woman.3eae968d854b558aef07476c0b0a79dc.svg",
+    "static/media/michele.svg": "/ci-sposiamo/static/media/michele.8e9b6865caccba6c486d58b21a11ba31.svg",
+    "static/media/eat.svg": "/ci-sposiamo/static/media/eat.42a62d343d751b36ae8b86fe2d87b0e6.svg",
+    "static/media/e.svg": "/ci-sposiamo/static/media/e.8491509edcc1ac91eb8342ab10de0319.svg",
+    "index.html": "/ci-sposiamo/index.html",
+    "static/media/external-link.svg": "/ci-sposiamo/static/media/external-link.f10e25392199413bde74b3563e4b322d.svg",
+    "static/media/arrow-down.svg": "/ci-sposiamo/static/media/arrow-down.db2a7c4f008a59253b0e5e2b3bb983a0.svg",
+    "main.7107b33d.css.map": "/ci-sposiamo/static/css/main.7107b33d.css.map",
+    "main.40ceb8c5.js.map": "/ci-sposiamo/static/js/main.40ceb8c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7107b33d.css",
+    "static/js/main.40ceb8c5.js"
+  ]
+}
