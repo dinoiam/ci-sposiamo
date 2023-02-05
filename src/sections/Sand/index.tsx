@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, RefObject } from "react";
+import React from "react";
 import { ReactComponent as ExternalLink } from "@svg/external-link.svg";
 import { ReactComponent as Ring } from "@svg/ring.svg";
 import { ReactComponent as Eat } from "@svg/eat.svg";
@@ -7,96 +7,9 @@ import { ReactComponent as Woman } from "@svg/woman.svg";
 import { ReactComponent as Michele } from "@svg/michele.svg";
 import { ReactComponent as Gabriella } from "@svg/gabriella.svg";
 import { ReactComponent as E } from "@svg/e.svg";
-import { gsap } from "@/gsap";
 import "./style.scss";
 
-type Props = {
-  appRef: RefObject<HTMLDivElement>;
-};
-
-export const Sand = ({ appRef }: Props) => {
-  // const section = useRef(null);
-  // const sandTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(null);
-
-  // useLayoutEffect(() => {
-  //   if (appRef?.current) {
-  //     const ctx = gsap.context(() => {
-  //       sandTimeline.current = gsap
-  //         .timeline({
-  //           scrollTrigger: {
-  //             trigger: ".section-sky__intro-label",
-  //             endTrigger: ".section-cloud",
-  //             start: "top 30%",
-  //             end: "top center",
-  //             scrub: 3,
-  //           },
-  //         })
-  //         .to(".section-sand__where", { y: 0, opacity: "1" })
-  //         .to(".section-sand__yes", {
-  //           x: 0,
-  //           opacity: "1",
-  //         })
-  //         .to(".section-sand__eat", {
-  //           x: 0,
-  //           opacity: "1",
-  //         })
-  //         .to(".section-sand__dance", {
-  //           scale: 1,
-  //           opacity: "1",
-  //         })
-  //         .add("sign", ">")
-  //         .to(
-  //           ".michele-path",
-  //           {
-  //             "stroke-dashoffset": 0,
-  //             ease: "none",
-  //           },
-  //           "sign"
-  //         )
-  //         .to(
-  //           ".michele-circle",
-  //           {
-  //             "stroke-dashoffset": 0,
-  //             ease: "none",
-  //           },
-  //           "<20%"
-  //         )
-  //         .to(
-  //           ".gabriella-path",
-  //           {
-  //             "stroke-dashoffset": 0,
-  //             ease: "none",
-  //           },
-  //           "sign"
-  //         )
-  //         .to(
-  //           ".gabriella-circle",
-  //           {
-  //             "stroke-dashoffset": 0,
-  //             ease: "none",
-  //           },
-  //           "<50%"
-  //         )
-  //         .to(
-  //           ".ampersand-path",
-  //           {
-  //             "stroke-dashoffset": 0,
-  //             ease: "none",
-  //           },
-  //           "sign"
-  //         )
-  //         .to(
-  //           ".section-sand__ps",
-  //           {
-  //             opacity: 1,
-  //           },
-  //           "sign"
-  //         );
-  //     }, appRef);
-  //     return () => ctx.revert();
-  //   }
-  // }, [appRef]);
-
+export const Sand = (): JSX.Element => {
   return (
     <section className="section-sand" id="section-sand">
       <div className="section-sand__info">

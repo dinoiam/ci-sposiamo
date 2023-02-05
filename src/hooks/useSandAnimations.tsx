@@ -1,11 +1,7 @@
-import { RefObject, useLayoutEffect, useRef } from "react";
+import { type RefObject, useLayoutEffect, useRef } from "react";
 import { gsap } from "@/gsap";
 
-type Props = {
-  appRef: RefObject<HTMLDivElement>;
-};
-
-export const useSandAnimations = ({ appRef }: Props) => {
+export const useSandAnimations = (appRef: RefObject<HTMLDivElement>): void => {
   const sandTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(null);
 
   useLayoutEffect(() => {
@@ -82,6 +78,8 @@ export const useSandAnimations = ({ appRef }: Props) => {
           "sign"
         );
     }, appRef);
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, [appRef]);
 };

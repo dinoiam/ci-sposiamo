@@ -6,6 +6,7 @@ module.exports = {
       "@sections": path.resolve(__dirname, "src/sections"),
       "@svg": path.resolve(__dirname, "src/svg"),
       "@images": path.resolve(__dirname, "src/images"),
+      "@components": path.resolve(__dirname, "src/components"),
     },
   },
 };

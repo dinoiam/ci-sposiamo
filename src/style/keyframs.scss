@@ -1,20 +1,24 @@
 @keyframes animate {
   0%,
   100% {
-    transform: translateY(0px);
+    // transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(10px);
+    // transform: translateY(10px);
+    transform: translate3d(0, 10px, 0);
   }
 }
 
 @keyframes animateLink {
   0%,
   100% {
-    transform: translate(-50%, 0px);
+    // transform: translate(-50%, 0px);
+    transform: translate3d(-50%, 0, 0);
   }
   50% {
-    transform: translate(-50%, 10px);
+    // transform: translate(-50%, 10px);
+    transform: translate3d(-50%, 10px, 0);
   }
 }
 

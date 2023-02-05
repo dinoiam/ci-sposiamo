@@ -1,11 +1,7 @@
-import { RefObject, useLayoutEffect, useRef } from "react";
+import { type RefObject, useLayoutEffect, useRef } from "react";
 import { gsap } from "@/gsap";
 
-type Props = {
-  appRef: RefObject<HTMLDivElement>;
-};
-
-export const useSkyAnimations = ({ appRef }: Props) => {
+export const useSkyAnimations = (appRef: RefObject<HTMLDivElement>): void => {
   const wavesTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(null);
   const backgroundTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(
     null
@@ -39,28 +35,29 @@ export const useSkyAnimations = ({ appRef }: Props) => {
           },
         })
         .add("waves")
-        .to(
-          ".section-sky__wave-1",
-          { backgroundPosition: `${window.innerWidth + 400 * 4}px 0` },
-          "waves"
-        )
-        .to(
-          ".section-sky__wave-2",
-          { backgroundPosition: `${window.innerWidth + 300 * -4}px 0` },
-          "waves"
-        )
-        .to(
-          ".section-sky__wave-3",
-          { backgroundPosition: `${window.innerWidth + 200 * 2}px 0` },
-          "waves"
-        )
-        .to(
-          ".section-sky__wave-4",
-          { backgroundPosition: `${window.innerWidth + 100 * -2}px 0` },
-          "waves"
-        );
+        .to(".section-sky__wave-wrapper-1", { x: "-200%" }, "waves")
+        .to(".section-sky__wave-wrapper-2", { x: "-170%" }, "waves")
+        .to(".section-sky__wave-wrapper-3", { x: "-130%" }, "waves")
+        .to(".section-sky__wave-wrapper-4", { x: "-180%" }, "waves");
+      // .to(
+      //   ".section-sky__wave-2",
+      //   { backgroundPosition: `${window.innerWidth + 300 * -4}px 0` },
+      //   "waves"
+      // )
+      // .to(
+      //   ".section-sky__wave-3",
+      //   { backgroundPosition: `${window.innerWidth + 200 * 2}px 0` },
+      //   "waves"
+      // )
+      // .to(
+      //   ".section-sky__wave-4",
+      //   { backgroundPosition: `${window.innerWidth + 100 * -2}px 0` },
+      //   "waves"
+      // );
     }, appRef);
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, [appRef]);
 
   useLayoutEffect(() => {
@@ -82,11 +79,13 @@ export const useSkyAnimations = ({ appRef }: Props) => {
         .to(".section-sky", { backgroundColor: "#fe7b81" }, ">")
         .to(".section-sky", { backgroundColor: "#7b4567" }, ">");
     }, appRef);
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, [appRef]);
 
   useLayoutEffect(() => {
-    if (appRef?.current) {
+    if (appRef?.current != null) {
       const stars = document.querySelectorAll(".section-sky__star");
       const ctx = gsap.context(() => {
         starsTimeline.current = gsap.timeline({
@@ -106,7 +105,9 @@ export const useSkyAnimations = ({ appRef }: Props) => {
           },
         });
       }, appRef);
-      return () => ctx.revert();
+      return () => {
+        ctx.revert();
+      };
     }
   }, [appRef]);
 };

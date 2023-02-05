@@ -195,7 +195,8 @@
   border: 3px solid var(--color-sky);
   animation: animateLink 4s ease-in-out infinite;
   transition: opacity 0.5s ease-in-out;
-  transform: translateX(-50%);
+  // transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,7 +208,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 300%;
   height: var(--wave-height);
   background: url(../../images/wave.png);
   background-size: var(--wave-width) var(--wave-height);
@@ -215,26 +216,38 @@
   animation-delay: calc(var(--wave) * 0.25s);
 }
 
-.section-sky__wave-1 {
+.section-sky__wave-wrapper-1 {
   z-index: 1000;
   opacity: 1;
-  background-position-x: 25rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(0, 0, 0);
 }
 
-.section-sky__wave-2 {
+.section-sky__wave-wrapper-2 {
   z-index: 999;
   opacity: 0.5;
-  background-position-x: 20rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(-100%, 0, 0);
 }
 
-.section-sky__wave-3 {
+.section-sky__wave-wrapper-3 {
   z-index: 998;
   opacity: 0.2;
-  background-position-x: 15rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(-30%, 0, 0);
 }
 
-.section-sky__wave-4 {
+.section-sky__wave-wrapper-4 {
   z-index: 997;
   opacity: 0.7;
-  background-position-x: 10rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(-140%, 0, 0);
 }

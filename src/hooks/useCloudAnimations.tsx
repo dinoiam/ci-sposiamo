@@ -1,11 +1,7 @@
-import { RefObject, useLayoutEffect, useRef } from "react";
+import { type RefObject, useLayoutEffect, useRef } from "react";
 import { gsap } from "@/gsap";
 
-type Props = {
-  appRef: RefObject<HTMLDivElement>;
-};
-
-export const useCloudAnimations = ({ appRef }: Props) => {
+export const useCloudAnimations = (appRef: RefObject<HTMLDivElement>): void => {
   const cloudTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(null);
 
   useLayoutEffect(() => {
@@ -43,6 +39,8 @@ export const useCloudAnimations = ({ appRef }: Props) => {
           "start"
         );
     }, appRef);
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, [appRef]);
 };
