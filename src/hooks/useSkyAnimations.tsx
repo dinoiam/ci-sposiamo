@@ -3,10 +3,10 @@ import { gsap } from "@/gsap";
 
 export const useSkyAnimations = (appRef: RefObject<HTMLDivElement>): void => {
   const wavesTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(null);
-  const backgroundTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(
+  const _backgroundTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(
     null
   );
-  const starsTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(null);
+  const _starsTimeline = useRef<ReturnType<typeof gsap.timeline> | null>(null);
 
   useLayoutEffect(() => {
     gsap.to(appRef.current?.querySelector(".section-sky__sun") ?? null, {
@@ -60,54 +60,54 @@ export const useSkyAnimations = (appRef: RefObject<HTMLDivElement>): void => {
     };
   }, [appRef]);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      backgroundTimeline.current = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: appRef.current,
-            endTrigger: ".section-sky__intro-label",
-            start: "top top",
-            end: "bottom top",
-            scrub: 3,
-          },
-        })
-        .from(".section-sky", { backgroundColor: "#87c6d8" })
-        .to(".section-sky", { backgroundColor: "#74939b" }, ">")
-        // .to(".section-sky", { backgroundColor: "##cf7d7c" }, ">")
-        .to(".section-sky", { backgroundColor: "#f2b6b4" }, ">")
-        .to(".section-sky", { backgroundColor: "#fe7b81" }, ">")
-        .to(".section-sky", { backgroundColor: "#7b4567" }, ">");
-    }, appRef);
-    return () => {
-      ctx.revert();
-    };
-  }, [appRef]);
+  // useLayoutEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     backgroundTimeline.current = gsap
+  //       .timeline({
+  //         scrollTrigger: {
+  //           trigger: appRef.current,
+  //           endTrigger: ".section-sky__intro-label",
+  //           start: "top top",
+  //           end: "bottom top",
+  //           scrub: 3,
+  //         },
+  //       })
+  //       .from(".section-sky", { backgroundColor: "#87c6d8" })
+  //       .to(".section-sky", { backgroundColor: "#74939b" }, ">")
+  //       // .to(".section-sky", { backgroundColor: "##cf7d7c" }, ">")
+  //       .to(".section-sky", { backgroundColor: "#f2b6b4" }, ">")
+  //       .to(".section-sky", { backgroundColor: "#fe7b81" }, ">")
+  //       .to(".section-sky", { backgroundColor: "#7b4567" }, ">");
+  //   }, appRef);
+  //   return () => {
+  //     ctx.revert();
+  //   };
+  // }, [appRef]);
 
-  useLayoutEffect(() => {
-    if (appRef?.current != null) {
-      const stars = document.querySelectorAll(".section-sky__star");
-      const ctx = gsap.context(() => {
-        starsTimeline.current = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".section-sky__intro-label",
-            start: "top top",
-            endTrigger: ".section-sand__info",
-            end: "bottom top",
-            scrub: 3,
-            onToggle: ({ isActive }) => {
-              stars.forEach((star) => {
-                isActive
-                  ? star.classList.add("visible")
-                  : star.classList.remove("visible");
-              });
-            },
-          },
-        });
-      }, appRef);
-      return () => {
-        ctx.revert();
-      };
-    }
-  }, [appRef]);
+  // useLayoutEffect(() => {
+  //   if (appRef?.current != null) {
+  //     const stars = document.querySelectorAll(".section-sky__star");
+  //     const ctx = gsap.context(() => {
+  //       starsTimeline.current = gsap.timeline({
+  //         scrollTrigger: {
+  //           trigger: ".section-sky__intro-label",
+  //           start: "top top",
+  //           endTrigger: ".section-sand__info",
+  //           end: "bottom top",
+  //           scrub: 3,
+  //           onToggle: ({ isActive }) => {
+  //             stars.forEach((star) => {
+  //               isActive
+  //                 ? star.classList.add("visible")
+  //                 : star.classList.remove("visible");
+  //             });
+  //           },
+  //         },
+  //       });
+  //     }, appRef);
+  //     return () => {
+  //       ctx.revert();
+  //     };
+  //   }
+  // }, [appRef]);
 };
