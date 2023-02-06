@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ci-sposiamo/static/css/main.7107b33d.css",
-    "main.js": "/ci-sposiamo/static/js/main.40ceb8c5.js",
+    "main.css": "/ci-sposiamo/static/css/main.bcdf4b04.css",
+    "main.js": "/ci-sposiamo/static/js/main.9c2435d0.js",
     "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/ci-sposiamo/static/media/Montserrat-Italic-VariableFont_wght.ef11b720b9a6cfb9a317.ttf",
     "static/media/MoonDance-Regular.ttf": "/ci-sposiamo/static/media/MoonDance-Regular.69bc2883db3811002422.ttf",
     "static/media/plane.svg": "/ci-sposiamo/static/media/plane.59e716c6e3ac776e32becb8e65298faf.svg",
@@ -17,11 +17,11 @@
     "index.html": "/ci-sposiamo/index.html",
     "static/media/external-link.svg": "/ci-sposiamo/static/media/external-link.f10e25392199413bde74b3563e4b322d.svg",
     "static/media/arrow-down.svg": "/ci-sposiamo/static/media/arrow-down.db2a7c4f008a59253b0e5e2b3bb983a0.svg",
-    "main.7107b33d.css.map": "/ci-sposiamo/static/css/main.7107b33d.css.map",
-    "main.40ceb8c5.js.map": "/ci-sposiamo/static/js/main.40ceb8c5.js.map"
+    "main.bcdf4b04.css.map": "/ci-sposiamo/static/css/main.bcdf4b04.css.map",
+    "main.9c2435d0.js.map": "/ci-sposiamo/static/js/main.9c2435d0.js.map"
   },
   "entrypoints": [
-    "static/css/main.7107b33d.css",
-    "static/js/main.40ceb8c5.js"
+    "static/css/main.bcdf4b04.css",
+    "static/js/main.9c2435d0.js"
   ]
 }
