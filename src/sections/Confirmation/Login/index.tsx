@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { Input } from "@/uikit/Input";
 import styles from "./style.module.scss";
 import { Button } from "@/uikit/Button";
-import { Title } from "@/uikit/Title";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase";
 import { InfoBox } from "@/uikit/InfoBox";
@@ -31,7 +30,9 @@ export const Login = (): JSX.Element => {
 
   return (
     <div className={styles.login}>
-      <Title>Accedi per confermare la partecipazione</Title>
+      <div className={styles.title}>
+        Accedi per confermare la partecipazione
+      </div>
       <div className={styles.form}>
         <Input type="email" placeholder="Email" id="email" ref={emailRef} />
         <Input

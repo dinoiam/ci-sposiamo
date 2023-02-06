@@ -7,6 +7,7 @@ import { Wave } from "./Wave";
 export const Sky = (): JSX.Element => {
   return (
     <section className="section-sky">
+      <div className="section-sky__background" />
       <div className="section-sky__sun" />
       <div
         className="section-sky__star section-sky__star-1"

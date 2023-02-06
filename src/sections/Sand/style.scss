@@ -60,8 +60,8 @@
 .section-sand__where {
   text-align: center;
   padding-bottom: var(--padding-info);
-  opacity: 0;
-  transform: translate3d(0, -100%, 0);
+  // opacity: 0;
+  // transform: translate3d(0, -100%, 0);
   // transform: translateY(-100%);
 }
 
@@ -85,9 +85,9 @@
 }
 
 .section-sand__eat {
-  opacity: 0;
+  // opacity: 0;
   margin-bottom: var(--padding-info);
-  transform: translate3d(50%, 0, 0);
+  // transform: translate3d(50%, 0, 0);
   // transform: translateX(50%);
   align-self: flex-end;
   display: flex;
@@ -100,8 +100,8 @@
 }
 
 .section-sand__dance {
-  opacity: 0;
-  transform: scale(0);
+  // opacity: 0;
+  // transform: scale(0);
   text-align: center;
   display: flex;
   align-items: center;
@@ -115,11 +115,9 @@
 }
 
 .section-sand__yes {
-  opacity: 0;
+  // opacity: 0;
   margin-bottom: var(--padding-info);
   // transform: translateX(-50%);
-  transform: translate3d(-50%, 0, 0);
-
   align-self: flex-start;
   display: flex;
   align-items: center;

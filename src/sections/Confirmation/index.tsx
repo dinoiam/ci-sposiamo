@@ -1,33 +1,44 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { ConfirmationFlow } from "@sections/Confirmation/Flow";
+import { PopUp } from "@/uikit/PopUp";
+import { useGetView } from "@/hooks/useGetView";
+import { ViewType } from "@/models/ViewModel";
+import { Button } from "@/uikit/Button";
 
 import "./style.scss";
 
-import { auth } from "@/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { PopUp } from "@/uikit/PopUp";
-
 export const Confirmation = (): JSX.Element => {
   const [showPopUp, setShowPopUp] = useState(false);
-  const [_user, loading, _error] = useAuthState(auth);
+  const viewState = useGetView();
+
+  const buttonLabel = useMemo(() => {
+    if (viewState.view === ViewType.END && viewState.confermato)
+      return "PRESENTI";
+    if (viewState.view === ViewType.END && !viewState.confermato)
+      return "NON PRESENTI";
+    if (viewState.view === ViewType.LOGIN) return "LOGIN PER CONFERMARE";
+    if (viewState.view === ViewType.SELECT) return "NON ANCORA SCELTO";
+    return "LOADING";
+  }, [viewState]);
 
   return (
     <>
-      <button
+      <Button
         className="Confirmation"
         onClick={() => {
           setShowPopUp(!showPopUp);
         }}
+        loading={viewState.view === ViewType.LOADING}
       >
-        {loading ? "CARICAMENTO" : "CONFERMA"}
-      </button>
+        {buttonLabel}
+      </Button>
       {showPopUp && (
         <PopUp
           onClose={() => {
             setShowPopUp(false);
           }}
         >
-          <ConfirmationFlow />
+          <ConfirmationFlow viewState={viewState} />
         </PopUp>
       )}
     </>

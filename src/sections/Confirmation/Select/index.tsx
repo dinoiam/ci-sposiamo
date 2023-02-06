@@ -2,12 +2,14 @@ import React from "react";
 import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useChangeConfirmation } from "@/hooks/useChangeConfirmation";
-import styles from "./style.module.scss";
 import { Button } from "@/uikit/Button";
+import { ReactComponent as Accept } from "@svg/accept.svg";
+import { ReactComponent as Reject } from "@svg/reject.svg";
+import styles from "./style.module.scss";
 
 interface Props {
   callback?: () => void;
-  displayName?: string;
+  displayName: string;
 }
 export const Select = ({ displayName, callback }: Props): JSX.Element => {
   const [user] = useAuthState(auth);
@@ -23,7 +25,7 @@ export const Select = ({ displayName, callback }: Props): JSX.Element => {
             callback?.();
           }}
         >
-          CI SAREMO! :D
+          <Accept />
         </Button>
         <Button
           onClick={() => {
@@ -31,7 +33,7 @@ export const Select = ({ displayName, callback }: Props): JSX.Element => {
             callback?.();
           }}
         >
-          PURTROPPO NO :(
+          <Reject />
         </Button>
       </div>
     </div>

@@ -1,39 +1,48 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ref } from "firebase/database";
 import { useObjectVal } from "react-firebase-hooks/database";
 import { auth, db } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { type ViewModel } from "@/models/ViewModel";
 
-export const useGetView = (): {
-  view: "loading" | "login" | "end" | "select";
-  goToSelect: () => void;
-  goToEnd: () => void;
-} => {
-  const [view, setView] = useState<"loading" | "login" | "end" | "select">(
-    "loading"
-  );
+export const useGetView = (): ViewModel => {
+  const [result, setResult] = useState<ViewModel>({
+    view: "loading",
+    displayName: undefined,
+    confermato: undefined,
+  });
   const [user, loading, _error] = useAuthState(auth);
   const [partecipazioni] = useObjectVal<{ confermato: boolean }>(
     ref(db, `partecipazioni/${user?.uid}`)
   );
-  const goToSelect = useCallback(() => {
-    if (view === "end") {
-      setView("select");
-    }
-  }, [view]);
-
-  const goToEnd = useCallback(() => {
-    if (view === "select") {
-      setView("end");
-    }
-  }, [view]);
+  const [nome] = useObjectVal<{ nome: string }>(ref(db, `nomi/${user?.uid}`));
 
   useEffect(() => {
-    if (loading) setView("loading");
-    if (!user) setView("login");
-    if (user && partecipazioni === null) setView("select");
-    if (user && partecipazioni) setView("end");
-  }, [loading, partecipazioni, user]);
+    if (loading || partecipazioni === undefined || nome === undefined)
+      setResult({
+        view: "loading",
+        displayName: undefined,
+        confermato: undefined,
+      });
+    else if (!user)
+      setResult({
+        view: "login",
+        displayName: undefined,
+        confermato: undefined,
+      });
+    else if (user && partecipazioni === null && nome)
+      setResult({
+        view: "select",
+        displayName: nome.nome,
+        confermato: null,
+      });
+    else if (user && partecipazioni && nome)
+      setResult({
+        view: "end",
+        displayName: nome.nome,
+        confermato: partecipazioni.confermato,
+      });
+  }, [loading, nome, partecipazioni, user]);
 
-  return { view, goToSelect, goToEnd };
+  return result;
 };

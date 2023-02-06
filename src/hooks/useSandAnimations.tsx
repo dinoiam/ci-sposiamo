@@ -16,19 +16,44 @@ export const useSandAnimations = (appRef: RefObject<HTMLDivElement>): void => {
             scrub: 3,
           },
         })
-        .to(".section-sand__where", { y: 0, opacity: "1" })
-        .to(".section-sand__yes", {
-          x: 0,
-          opacity: "1",
-        })
-        .to(".section-sand__eat", {
-          x: 0,
-          opacity: "1",
-        })
-        .to(".section-sand__dance", {
-          scale: 1,
-          opacity: "1",
-        })
+        .fromTo(
+          ".section-sand__where",
+          { y: "-100%", opacity: 0 },
+          { y: 0, opacity: "1" }
+        )
+        .fromTo(
+          ".section-sand__yes",
+          {
+            x: "-50%",
+            opacity: 0,
+          },
+          {
+            x: 0,
+            opacity: 1,
+          }
+        )
+        .fromTo(
+          ".section-sand__eat",
+          {
+            x: "50%",
+            opacity: 0,
+          },
+          {
+            x: 0,
+            opacity: 1,
+          }
+        )
+        .fromTo(
+          ".section-sand__dance",
+          {
+            scale: 0,
+            opacity: 0,
+          },
+          {
+            scale: 1,
+            opacity: 1,
+          }
+        )
         .add("sign", ">")
         .to(
           ".michele-path",

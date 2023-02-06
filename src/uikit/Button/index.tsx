@@ -9,9 +9,14 @@ type Props = React.DetailedHTMLProps<
   loading?: boolean;
 };
 
-export const Button = ({ children, loading, ...props }: Props): JSX.Element => {
+export const Button = ({
+  children,
+  loading,
+  className,
+  ...props
+}: Props): JSX.Element => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${className}`}>
       <button
         className={`${styles.button} ${loading ? styles.loading : ""}`}
         {...props}
