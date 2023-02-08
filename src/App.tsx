@@ -3,7 +3,6 @@ import { Sky } from "@sections/Sky";
 import { Sand } from "./sections/Sand";
 import { Cloud } from "./sections/Cloud";
 import { Confirmation } from "./sections/Confirmation";
-
 import { useCloudAnimations } from "./hooks/useCloudAnimations";
 import { useSandAnimations } from "./hooks/useSandAnimations";
 import { useSkyAnimations } from "./hooks/useSkyAnimations";

@@ -1,0 +1,13 @@
+@import "src/style/palette";
+
+.section-sand__eat {
+  margin-bottom: var(--padding-info);
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+}
+.section-sand__eat svg {
+  width: 40px;
+  fill: $primary;
+  margin-right: 0.4rem;
+}

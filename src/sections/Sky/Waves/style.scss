@@ -1,0 +1,51 @@
+@import "src/style/z-index";
+@import "src/style/palette";
+
+/* WAVES SECTIONS DIVIDER */
+
+.section-sky__wave-wrapper {
+  height: calc(var(--wave-height) - 2px);
+}
+
+.section-sky__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300%;
+  height: calc(var(--wave-height) - 2px);
+  background-size: var(--wave-width) var(--wave-height);
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--wave) * 0.25s);
+}
+
+.section-sky__wave-wrapper-1 {
+  z-index: z-index("waves");
+  opacity: 1;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.section-sky__wave-wrapper-2 {
+  z-index: z-index("waves") - 1;
+  opacity: 0.5;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.section-sky__wave-wrapper-3 {
+  z-index: z-index("waves") - 2;
+  opacity: 0.2;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.section-sky__wave-wrapper-4 {
+  z-index: z-index("waves") - 3;
+  opacity: 0.7;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

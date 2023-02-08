@@ -1,18 +1,14 @@
+import { type UserInfoModel } from "@/models/FirebaseModel";
 import { Button } from "@/uikit/Button";
 import React, { useState } from "react";
+import { Confirmed } from "../Confirmed";
 import { Select } from "../Select";
 import styles from "./style.module.scss";
 
 interface Props {
-  displayName: string;
-  confermato: boolean;
-  // goToSelect: () => void;
+  userInfo: UserInfoModel;
 }
-export const Result = ({
-  // goToSelect,
-  displayName,
-  confermato,
-}: Props): JSX.Element => {
+export const Result = ({ userInfo }: Props): JSX.Element => {
   const [showChange, setShowChange] = useState(false);
 
   return (
@@ -22,16 +18,13 @@ export const Result = ({
           callback={() => {
             setShowChange(false);
           }}
-          displayName={displayName}
+          userInfo={userInfo}
         />
       ) : (
         <>
-          <h2 className={styles.name}>Ciao {displayName}!</h2>
-          {confermato ? (
-            <div className={styles.confirmed}>
-              <span>Avete correttamente confermato la vostra presenza</span>
-              <span>Save the date 01.09.2023</span>
-            </div>
+          <h2 className={styles.name}>Ciao {userInfo.name}!</h2>
+          {userInfo.confermato ? (
+            <Confirmed userInfo={userInfo} />
           ) : (
             <div className={styles["not-confirmed"]}>
               Purtroppo non sarete dei nostri :(
@@ -44,7 +37,7 @@ export const Result = ({
           setShowChange(!showChange);
         }}
       >
-        {showChange ? "Annulla modifica" : "Avete cambiato idea?"}
+        {showChange ? "Annulla modifica" : "Cambiato idea?"}
       </Button>
     </div>
   );

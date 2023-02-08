@@ -1,3 +1,5 @@
+@import "src/style/palette";
+
 .select {
   --size-name: 1.5rem;
   --margin-button: 0 0 2rem;
@@ -16,7 +18,7 @@
   justify-content: center;
   position: relative;
   font-family: "Montserrat-Italic", sans-serif;
-  color: #074467;
+  color: $primary;
   text-align: center;
 }
 .wrapper {

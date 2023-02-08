@@ -1,7 +1,9 @@
-.Confirmation {
+@import "src/style/z-index";
+@import "src/style/palette";
+
+.confirmation {
   position: fixed;
-  bottom: 0;
+  bottom: 1rem;
   right: 0;
-  z-index: 1000001;
-  color: #074467;
+  z-index: z-index("login");
 }

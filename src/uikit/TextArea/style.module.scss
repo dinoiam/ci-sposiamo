@@ -1,0 +1,69 @@
+@import "src/style/palette";
+// @import "src/style/keyframes";
+
+.wrapper {
+  position: relative;
+  border: 1px solid $primary-dark;
+  height: 8rem;
+  background: white;
+}
+
+textarea {
+  font-family: "Montserrat-Italic", sans-serif;
+  resize: none;
+  height: 6rem;
+  width: 100%;
+  border: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+.status {
+  width: 100%;
+  background-color: $primary-light;
+  height: 1.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  img {
+    border-radius: 50%;
+  }
+
+  img,
+  svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    animation: fadeOut 2.5s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

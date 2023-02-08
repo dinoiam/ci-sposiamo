@@ -1,0 +1,9 @@
+@import "src/style/palette";
+
+.section-sand__ps {
+  width: 100%;
+  padding: var(--padding-ps);
+  font-size: var(--size-ps);
+  text-align: center;
+  opacity: 0;
+}

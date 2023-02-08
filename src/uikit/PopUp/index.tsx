@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import close from "@images/close.png";
 import styles from "./style.module.scss";
 
 interface Props {
@@ -24,6 +25,9 @@ export const PopUp = ({ children, onClose }: Props): JSX.Element => {
         className={styles.popup__content}
       >
         {children}
+        <button className={styles.close} onClick={onClose}>
+          <img src={close} />
+        </button>
       </div>
     </div>
   );

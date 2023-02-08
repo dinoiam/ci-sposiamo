@@ -1,3 +1,5 @@
+@import "src/style/palette";
+
 .input {
   border: none;
   height: 50px;
@@ -9,8 +11,6 @@
   width: 100%;
 
   &:focus {
-    // box-shadow: 0 1px 1px 0 rgba(65, 76, 63, 0.3),
-    //   0 1px 3px 1px rgba(65, 76, 63, 0.15);
     background: white;
     border-bottom: 2px solid #87c6d8;
   }
@@ -36,7 +36,7 @@
   top: 50%;
   left: 20px;
   font-size: 16px;
-  color: rgba(#000, 0.5);
+  color: rgba($primary_dark, 0.5);
   font-weight: 500;
   // transform-origin: 0 0;
   transform: translateY(-50%);

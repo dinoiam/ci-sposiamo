@@ -5,6 +5,6 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 g.registerPlugin(ScrollTrigger, MotionPathPlugin, TextPlugin);
 ScrollTrigger.config({
-  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load", // notice "resize" isn't in the list
+  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
 });
 export const gsap = g;

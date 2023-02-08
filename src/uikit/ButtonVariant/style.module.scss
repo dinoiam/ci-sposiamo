@@ -1,0 +1,19 @@
+@import "src/style/palette";
+
+.button {
+  position: relative;
+  color: $primary;
+  background: $primary_light;
+  border-right: none;
+  border-radius: 35% 0 0 35%;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.loading {
+  opacity: 0.2;
+  pointer-events: none;
+}

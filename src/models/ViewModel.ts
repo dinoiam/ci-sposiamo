@@ -1,3 +1,5 @@
+import { type UserInfoModel } from "./FirebaseModel";
+
 export enum ViewType {
   LOADING = "loading",
   LOGIN = "login",
@@ -8,21 +10,15 @@ export enum ViewType {
 export type ViewModel =
   | {
       view: "loading";
-      displayName: undefined;
-      confermato: undefined;
     }
   | {
       view: "login";
-      displayName: undefined | null;
-      confermato: undefined | null;
     }
   | {
       view: "end";
-      displayName: string;
-      confermato: boolean;
+      userInfo: UserInfoModel;
     }
   | {
       view: "select";
-      displayName: string;
-      confermato: null;
+      userInfo: UserInfoModel;
     };
