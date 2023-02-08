@@ -17,8 +17,9 @@ export const Stars = (): JSX.Element => {
             key={id}
             id={id}
             style={{
-              left: `${randomInteger(1, 99)}%`,
-              bottom: `${randomInteger(1, 99)}%`,
+              left: `${randomInteger(2, 98)}%`,
+              bottom: `${randomInteger(2, 98)}%`,
+              opacity: `${randomInteger(0.4, 1)}`,
             }}
           />
         );

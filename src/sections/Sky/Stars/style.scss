@@ -13,7 +13,7 @@
   background-color: $primary-light;
   position: absolute;
   border-radius: 50%;
-  opacity: 0;
-  animation: twinkle 2s infinite;
+  // opacity: 0;
+  // animation: twinkle 2s forwards;
   animation-delay: calc(var(--star) * 0.05s);
 }
