@@ -1,27 +1,14 @@
 @import "src/style/z-index";
 @import "src/style/palette";
+@import "src/style/media-queries.scss";
 
 .popup {
   --size: 1rem;
   --content-width: 98%;
   --content-height: 98%;
   --padding-content: 5%;
-}
-
-@media screen and (min-width: 360px) and (min-height: 600px) {
-  .popup {
-    --size: 1rem;
-    --content-width: 95%;
-    --content-height: 90%;
-  }
-}
-
-@media screen and (min-width: 360px) and (min-height: 800px) {
-  .popup {
-    --size: 1rem;
-    --content-width: 95%;
-    --content-height: 70%;
-  }
+  --max-width--content: 45rem;
+  --max-height--content: 40rem;
 }
 
 .popup {
@@ -44,7 +31,8 @@
     background-color: $secondary-light;
     border-radius: 1%;
     padding: var(--padding-content);
-    max-width: 700px;
+    max-width: var(--max-width--content);
+    max-height: var(--max-height--content);
     overflow-y: scroll;
     display: flex;
     cursor: auto;

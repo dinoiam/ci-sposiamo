@@ -1,16 +1,16 @@
 import React from "react";
 import { ReactComponent as ExternalLink } from "@svg/external-link.svg";
-import "./style.scss";
+import styles from "./style.module.scss";
 
 export const Where = (): JSX.Element => {
   return (
-    <h2 className="section-sand__where">
+    <h2 data-animation-id="section-sand__where" className={styles.where}>
       <p>Vi aspettiamo il</p>
       <p>01.09.2023</p>
       <p>alle 17.00</p>
       <p>a "La porta dei Leoni"</p>
       <a
-        className="section-sand__maps-link"
+        className={styles.maps}
         href="https://goo.gl/maps/GHrvzovsTstgykCZ7"
         target="_blank"
         rel="noopener noreferrer"

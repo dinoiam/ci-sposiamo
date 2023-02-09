@@ -1,0 +1,14 @@
+@import "src/style/palette";
+
+.dance {
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 45px;
+    height: 45px;
+    fill: $primary;
+    margin-left: 0.4rem;
+  }
+}

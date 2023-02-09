@@ -7,24 +7,6 @@
   --padding-login: 0 0 2rem;
 }
 
-@media screen and (min-width: 360px) and (min-height: 500px) {
-  .login {
-    --margin-title: 4rem;
-    --width-form: 300px;
-  }
-}
-
-// @media screen and (min-width: 768px) and (min-height: 768px) {
-//   .login {
-//     --size: 3rem;
-//   }
-// }
-
-// @media screen and (min-width: 1024px) {
-//   .login {
-//   }
-// }
-
 .login {
   display: flex;
   width: 100%;

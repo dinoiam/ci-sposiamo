@@ -1,0 +1,33 @@
+@import "src/style/z-index";
+@import "src/style/palette";
+@import "src/style/media-queries.scss";
+
+.plane {
+  --padding: 0 0 5rem 0;
+
+  @include ms {
+    --padding: 4rem 0;
+  }
+}
+
+.plane {
+  padding: var(--padding);
+  width: 100%;
+  overflow: visible;
+  max-width: 40rem;
+  margin: auto;
+
+  svg {
+    width: 100%;
+    overflow: visible;
+  }
+  :global {
+    #plane {
+      width: 50px;
+    }
+
+    .plane-dashed {
+      stroke-dasharray: 5;
+    }
+  }
+}

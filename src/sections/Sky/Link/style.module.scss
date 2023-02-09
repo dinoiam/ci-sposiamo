@@ -1,7 +1,20 @@
 @import "src/style/z-index";
 @import "src/style/palette";
+@import "src/style/media-queries.scss";
 
-.section-sky__rapid-link {
+.link {
+  --link: 3rem;
+
+  @include ms {
+    --link: 3.5rem;
+  }
+
+  @include m {
+    --link: 3rem;
+  }
+}
+
+.link {
   position: absolute;
   left: 50%;
   bottom: 2%;
@@ -10,7 +23,6 @@
   width: var(--link);
   border-radius: 50%;
   border: 3px solid $sky;
-  // animation: animateLink 4s ease-in-out infinite;
   transform: translate3d(-50%, 0, 0);
   display: flex;
   align-items: center;

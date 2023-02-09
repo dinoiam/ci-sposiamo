@@ -1,16 +1,16 @@
 import React from "react";
-import "./style.scss";
 import { Ps } from "./Ps";
 import { Names } from "./Names";
 import { Dance } from "./Dance";
 import { Yes } from "./Yes";
 import { Where } from "./Where";
 import { Eat } from "./Eat";
+import styles from "./style.module.scss";
 
 export const Sand = (): JSX.Element => {
   return (
-    <section className="section-sand" id="section-sand">
-      <div className="section-sand__info">
+    <section className={styles.sand} id="section-sand">
+      <div className={styles.info}>
         <Where />
         <Yes />
         <Eat />

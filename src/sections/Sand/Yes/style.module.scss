@@ -1,0 +1,24 @@
+@import "src/style/palette";
+@import "src/style/media-queries.scss";
+
+.yes {
+  --margin: 0 0 2rem;
+
+  @include ms {
+    --margin: 0 0 3rem;
+  }
+}
+
+.yes {
+  margin: var(--margin);
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: $primary;
+    margin-left: 0.4rem;
+  }
+}

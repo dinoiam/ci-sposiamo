@@ -1,0 +1,27 @@
+@import "src/style/z-index";
+@import "src/style/palette";
+@import "src/style/media-queries.scss";
+
+/* SECTION SKY */
+
+.cloud {
+  --cloud: 10rem;
+
+  @include ms {
+    --cloud: 15rem;
+  }
+
+  @include m {
+    --cloud: 20rem;
+  }
+}
+
+.cloud {
+  position: absolute;
+  height: var(--cloud);
+  width: var(--cloud);
+  opacity: 1;
+  top: 0;
+  left: 0;
+  background-size: var(--cloud) var(--cloud);
+}

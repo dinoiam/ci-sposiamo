@@ -1,10 +1,10 @@
 import React from "react";
 import { ReactComponent as EatSvg } from "@svg/eat.svg";
-import "./style.scss";
+import styles from "./style.module.scss";
 
 export const Eat = (): JSX.Element => {
   return (
-    <h2 className="section-sand__eat">
+    <h2 data-animation-id="section-sand__eat" className={styles.eat}>
       <EatSvg />
       mangiare
     </h2>

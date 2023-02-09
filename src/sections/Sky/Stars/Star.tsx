@@ -1,14 +1,15 @@
 import React from "react";
+import styles from "./style.module.scss";
 
 interface Props {
-  id?: number;
   style?: React.CSSProperties;
 }
-export const Star = ({ id, style }: Props): JSX.Element => {
+export const Star = ({ style }: Props): JSX.Element => {
   return (
     <div
-      className={`section-sky__star ${id}`}
-      style={{ "--star": id, ...style } as React.CSSProperties}
+      data-animation-id="section-sky__star"
+      className={styles.star}
+      style={style}
     />
   );
 };

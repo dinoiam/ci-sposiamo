@@ -9,20 +9,20 @@ export const useSandAnimations = (appRef: RefObject<HTMLDivElement>): void => {
       sandTimeline.current = gsap
         .timeline({
           scrollTrigger: {
-            trigger: ".section-sky__intro-label",
-            endTrigger: ".section-cloud",
+            trigger: "[data-animation-id='section-sky__intro-label'",
+            endTrigger: "[data-animation-id='section-cloud']",
             start: "top 30%",
             end: "top center",
             scrub: 3,
           },
         })
         .fromTo(
-          ".section-sand__where",
+          "[data-animation-id='section-sand__where']",
           { y: "-100%", opacity: 0 },
           { y: 0, opacity: "1" }
         )
         .fromTo(
-          ".section-sand__yes",
+          "[data-animation-id='section-sand__yes']",
           {
             x: "-50%",
             opacity: 0,
@@ -33,7 +33,7 @@ export const useSandAnimations = (appRef: RefObject<HTMLDivElement>): void => {
           }
         )
         .fromTo(
-          ".section-sand__eat",
+          "[data-animation-id='section-sand__eat']",
           {
             x: "50%",
             opacity: 0,
@@ -44,7 +44,7 @@ export const useSandAnimations = (appRef: RefObject<HTMLDivElement>): void => {
           }
         )
         .fromTo(
-          ".section-sand__dance",
+          "[data-animation-id='section-sand__dance']",
           {
             scale: 0,
             opacity: 0,
@@ -55,40 +55,65 @@ export const useSandAnimations = (appRef: RefObject<HTMLDivElement>): void => {
           }
         )
         .add("sign", ">")
-        .to(
+        .fromTo(
           ".michele-path",
+          {
+            "stroke-dashoffset": 568,
+            "stroke-dasharray": 568,
+            ease: "none",
+          },
           {
             "stroke-dashoffset": 0,
             ease: "none",
           },
           "sign"
         )
-        .to(
+        .fromTo(
           ".michele-circle",
+          {
+            "stroke-dashoffset": 12,
+            "stroke-dasharray": 12,
+            ease: "none",
+          },
           {
             "stroke-dashoffset": 0,
             ease: "none",
           },
           "<20%"
         )
-        .to(
+        .fromTo(
           ".gabriella-path",
+          {
+            "stroke-dashoffset": 741,
+            "stroke-dasharray": 741,
+            ease: "none",
+          },
           {
             "stroke-dashoffset": 0,
             ease: "none",
           },
           "sign"
         )
-        .to(
+        .fromTo(
           ".gabriella-circle",
+          {
+            "stroke-dashoffset": 12,
+            "stroke-dasharray": 12,
+            ease: "none",
+          },
           {
             "stroke-dashoffset": 0,
             ease: "none",
           },
           "<50%"
         )
-        .to(
+        .fromTo(
           ".ampersand-path",
+          {
+            "stroke-dashoffset": 84,
+            "stroke-dasharray": 84,
+            ease: "none",
+          },
           {
             "stroke-dashoffset": 0,
             ease: "none",
@@ -96,7 +121,7 @@ export const useSandAnimations = (appRef: RefObject<HTMLDivElement>): void => {
           "sign"
         )
         .to(
-          ".section-sand__ps",
+          "[data-animation-id='section-sand__ps']",
           {
             opacity: 1,
           },

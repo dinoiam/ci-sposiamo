@@ -1,0 +1,36 @@
+// media aliases and breakpoints
+$screen-xs: 320px;
+$screen-s: 480px;
+$screen-ms: 768px;
+$screen-m: 1024px;
+$screen-l: 1440px;
+
+@mixin xs {
+  @media screen and (min-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin s {
+  @media screen and (min-width: #{$screen-s}) {
+    @content;
+  }
+}
+
+@mixin ms {
+  @media screen and (min-width: #{$screen-ms}) {
+    @content;
+  }
+}
+
+@mixin m {
+  @media screen and (min-width: #{$screen-m}) {
+    @content;
+  }
+}
+
+@mixin l {
+  @media screen and (min-width: #{$screen-l}) {
+    @content;
+  }
+}

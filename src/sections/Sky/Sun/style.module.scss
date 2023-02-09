@@ -1,9 +1,24 @@
 @import "src/style/z-index";
 @import "src/style/palette";
+@import "src/style/media-queries.scss";
 
-/* SUN */
+/* SECTION SKY */
 
-.section-sky__sun {
+.sun {
+  --sun: 3rem;
+  --sun-space: 3rem;
+
+  @include ms {
+    --sun: 5rem;
+    --sun-space: 5rem;
+  }
+
+  @include m {
+    --sun-space: 8rem;
+  }
+}
+
+.sun {
   background-color: $sun;
   height: var(--sun);
   width: var(--sun);

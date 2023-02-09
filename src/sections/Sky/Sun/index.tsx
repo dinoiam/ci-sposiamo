@@ -1,6 +1,6 @@
 import React from "react";
-import "./style.scss";
+import styles from "./style.module.scss";
 
 export const Sun = (): JSX.Element => {
-  return <div className="section-sky__sun" />;
+  return <div data-animation-id={"section-sky__sun"} className={styles.sun} />;
 };

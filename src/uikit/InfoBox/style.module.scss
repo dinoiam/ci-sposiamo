@@ -2,11 +2,6 @@
   --size: 0.8rem;
 }
 
-@media screen and (min-width: 360px) and (min-height: 500px) {
-  .message {
-  }
-}
-
 .message {
   font-size: var(--size);
   position: absolute;

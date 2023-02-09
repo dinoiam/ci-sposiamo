@@ -3,16 +3,18 @@ import { Stars } from "./Stars";
 import { Waves } from "./Waves";
 import { Sun } from "./Sun";
 import { Intro } from "./Intro";
-import "./style.scss";
 import { Link } from "./Link";
+import { Background } from "./Background";
+import { Cloud } from "./Cloud";
+import styles from "./style.module.scss";
 
 export const Sky = (): JSX.Element => {
   return (
-    <section className="section-sky">
-      <div className="section-sky__background" />
+    <section data-animation-id="section-sky" className={styles.sky}>
+      <Background />
       <Sun />
       <Stars />
-      <div className="section-sky__cloud" />
+      <Cloud />
       <Intro />
       <Waves />
       <Link />

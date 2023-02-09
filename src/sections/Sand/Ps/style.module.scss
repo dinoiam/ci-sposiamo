@@ -1,0 +1,22 @@
+@import "src/style/palette";
+@import "src/style/media-queries.scss";
+
+/* SECTION SAND */
+
+.ps {
+  --size: 1rem;
+  --padding: 0;
+
+  @include ms {
+    --size: 1.5rem;
+    --padding: 0 3rem;
+  }
+}
+
+.ps {
+  width: 100%;
+  padding: var(--padding);
+  font-size: var(--size);
+  text-align: center;
+  opacity: 0;
+}

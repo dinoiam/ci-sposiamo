@@ -1,0 +1,30 @@
+@import "src/style/z-index";
+@import "src/style/palette";
+@import "src/style/media-queries.scss";
+
+.cloud {
+  --size: 1rem;
+  --padding: 4rem 1rem;
+
+  @include ms {
+    --size: 2rem;
+    --padding: 3rem;
+  }
+
+  @include m {
+    --size: 1rem;
+  }
+}
+
+.cloud {
+  background-color: $cloud;
+  font-size: var(--size);
+  font-family: "Montserrat-Italic", sans-serif;
+  color: $primary;
+
+  .wrapper {
+    width: 100%;
+    background-color: $cloud;
+    padding: var(--padding);
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import wave from "@images/wave.png";
+import styles from "./style.module.scss";
 
 interface Props {
   id?: number;
@@ -7,10 +8,12 @@ interface Props {
 }
 export const Wave = ({ id, style }: Props): JSX.Element => {
   return (
-    <div className={`section-sky__wave-wrapper-${id}`}>
-      {/* <img className={`section-sky__wave ${classNames}`} src={wave} /> */}
+    <div
+      className={styles[`wave-wrapper-${id}`]}
+      data-animation-id={`section-sky__wave-wrapper-${id}`}
+    >
       <div
-        className={`section-sky__wave section-sky__wave-${id}`}
+        className={styles.wave}
         style={
           {
             "--wave": id,

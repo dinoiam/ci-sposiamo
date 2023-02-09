@@ -1,21 +1,21 @@
 import React, { useRef } from "react";
 import { Star } from "./Star";
-import "./style.scss";
+import styles from "./style.module.scss";
 
 function randomInteger(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+const stars = Array.from({ length: 40 });
 
 export const Stars = (): JSX.Element => {
   const startRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="stars" ref={startRef}>
-      {Array.from({ length: 40 }).map((_, id) => {
+    <div className={styles.stars} ref={startRef}>
+      {stars.map((_, id) => {
         return (
           <Star
             key={id}
-            id={id}
             style={{
               left: `${randomInteger(2, 98)}%`,
               bottom: `${randomInteger(2, 98)}%`,

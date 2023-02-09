@@ -1,39 +1,24 @@
 @import "src/style/palette";
+@import "src/style/media-queries.scss";
 
-/* SECTION SAND */
-
-.section-sand {
+.sand,
+.info {
   --size: 1.7rem;
-  --size-ps: 1rem;
-  --size-maps-link: 1rem;
-  --size-svg-names: 12rem;
-  --size-svg-ampersand: 2rem;
-  --padding-box: 4rem;
-  --padding-info: 2rem;
+  --padding-info: 4rem;
   --padding-section: 3rem 2rem 3rem;
-  --padding-ps: 0;
-}
 
-@media screen and (min-width: 768px) {
-  .section-sand {
+  @include ms {
     --size: 2.5rem;
-    --size-ps: 1.5rem;
-    --size-svg-names: 17rem;
-    --size-svg-ampersand: 3rem;
-    --padding-box: 7rem;
-    --padding-info: 3rem;
+    --padding-info: 7rem;
     --padding-section: 5rem 0;
-    --padding-ps: 0 3rem;
   }
-}
 
-@media screen and (min-width: 1024px) {
-  .section-sand {
+  @include m {
     --padding-section: 5rem 0 5rem;
   }
 }
 
-.section-sand {
+.sand {
   background-color: $sand;
   overflow: hidden;
   font-size: var(--size);
@@ -46,13 +31,11 @@
   padding: var(--padding-section);
 }
 
-/* INFOS */
-
-.section-sand__info {
+.info {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   font-family: "Montserrat-Italic", sans-serif;
   align-items: center;
-  padding-bottom: var(--padding-box);
+  padding-bottom: var(--padding-info);
 }

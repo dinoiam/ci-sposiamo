@@ -10,15 +10,20 @@ export const useCloudAnimations = (appRef: RefObject<HTMLDivElement>): void => {
         .timeline({
           scrollTrigger: {
             trigger: "#text1849",
-            endTrigger: ".section-cloud__gift-info",
+            endTrigger: "[data-animation-id='section-cloud__gift-info']",
             start: "bottom bottom",
             end: "bottom bottom",
             scrub: 2,
           },
         })
         .add("start")
-        .to(
-          ".path",
+        .fromTo(
+          ".plane-path",
+          {
+            "stroke-dasharray": 1257,
+            "stroke-dashoffset": 1257,
+            ease: "none",
+          },
           {
             "stroke-dashoffset": 0,
             ease: "none",
@@ -29,8 +34,8 @@ export const useCloudAnimations = (appRef: RefObject<HTMLDivElement>): void => {
           "#plane",
           {
             motionPath: {
-              path: ".path",
-              align: ".path",
+              path: ".plane-path",
+              align: ".plane-path",
               autoRotate: true,
               alignOrigin: [0.5, 0.5],
             },

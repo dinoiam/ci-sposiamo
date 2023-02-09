@@ -1,0 +1,30 @@
+@import "src/style/palette";
+@import "src/style/media-queries.scss";
+
+.names {
+  --size-svg-names: 12rem;
+  --size-svg-ampersand: 2rem;
+  --padding: 4rem;
+
+  @include ms {
+    --size-svg-names: 17rem;
+    --size-svg-ampersand: 3rem;
+    --padding: 7rem;
+  }
+}
+
+.names {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: var(--padding);
+
+  .michele,
+  .gabriella {
+    width: var(--size-svg-names);
+  }
+  .ampersand {
+    width: var(--size-svg-ampersand);
+  }
+}
