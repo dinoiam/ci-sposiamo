@@ -5,11 +5,13 @@
 /* SECTION SKY */
 
 .sun {
-  --sun: 3rem;
+  --sun-height: 3rem;
+  --sun-width: 3rem;
   --sun-space: 3rem;
 
   @include ms {
-    --sun: 5rem;
+    --sun-height: 5rem;
+    --sun-width: 5rem;
     --sun-space: 5rem;
   }
 
@@ -20,11 +22,11 @@
 
 .sun {
   background-color: $sun;
-  height: var(--sun);
-  width: var(--sun);
+  height: var(--sun-height);
+  width: var(--sun-width);
   border-radius: 50%;
   position: absolute;
   margin: var(--sun-space) 0 0 var(--sun-space);
-  box-shadow: 0 0 0 0.62em rgba($sun, 0.6), 0 0 0 1.25em rgba($sun, 0.5),
-    0 0 0 1.9em rgba($sun, 0.4);
+  box-shadow: 0 0 0.5rem 0.6rem rgba($sun, 0.6),
+    0 0 0.5rem 1.2rem rgba($sun, 0.5), 0 0 0.8rem 1.8rem rgba($sun, 0.4);
 }

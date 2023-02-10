@@ -27,7 +27,9 @@ export const Result = ({ userInfo }: Props): JSX.Element => {
             <Confirmed userInfo={userInfo} />
           ) : (
             <div className={styles["not-confirmed"]}>
-              Purtroppo non sarete dei nostri :(
+              {userInfo.n_person > 1
+                ? "Purtroppo non sarete dei nostri :("
+                : "Purtroppo non sarai dei nostri :("}
             </div>
           )}
         </>

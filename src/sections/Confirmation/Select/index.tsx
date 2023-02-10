@@ -18,7 +18,9 @@ export const Select = ({ userInfo, callback }: Props): JSX.Element => {
 
   return (
     <div className={styles.select}>
-      <h2 className={styles.name}>{userInfo.name} sarete dei nostri?</h2>
+      <h2 className={styles.name}>
+        {userInfo.name} {userInfo.n_person > 1 ? " ci sarete?" : " ci sarai?"}
+      </h2>
       <div className={styles.wrapper}>
         <Button
           onClick={() => {

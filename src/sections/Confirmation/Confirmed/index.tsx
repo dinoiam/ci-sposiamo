@@ -15,8 +15,8 @@ export const Confirmed = ({ userInfo }: Props): JSX.Element => {
 
   return (
     <div className={styles.confirmed}>
-      <span>Presenza correttamente confermata</span>
-      <span>Save the date 01.09.2023</span>
+      <span>Presenza correttamente confermata!</span>
+      <span>Save the date 01.09.2023.</span>
       <br />
       <br />
       <span>Allergie e intolleranze</span>
