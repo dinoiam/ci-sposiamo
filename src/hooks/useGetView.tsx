@@ -14,7 +14,7 @@ export const useGetView = (): ViewModel => {
   const [userInfo] = useObjectVal<UserInfoModel>(
     ref(db, `userInfo/${user?.uid}`)
   );
-  console.log(userInfo);
+
   useEffect(() => {
     if (loading)
       setResult({

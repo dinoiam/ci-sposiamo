@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c501c8e3.css",
-    "main.js": "/static/js/main.1487fb65.js",
+    "main.css": "/static/css/main.4cc2ddba.css",
+    "main.js": "/static/js/main.74e30c01.js",
     "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/static/media/Montserrat-Italic-VariableFont_wght.ef11b720b9a6cfb9a317.ttf",
     "static/media/MoonDance-Regular.ttf": "/static/media/MoonDance-Regular.69bc2883db3811002422.ttf",
     "static/media/plane.svg": "/static/media/plane.68765b8c327ccdc81e24d9f6816956ea.svg",
@@ -20,11 +20,11 @@
     "static/media/external-link.svg": "/static/media/external-link.f10e25392199413bde74b3563e4b322d.svg",
     "static/media/saved.svg": "/static/media/saved.a4dc657dc1049060f37e77fef5471cd5.svg",
     "static/media/arrow-down.svg": "/static/media/arrow-down.db2a7c4f008a59253b0e5e2b3bb983a0.svg",
-    "main.c501c8e3.css.map": "/static/css/main.c501c8e3.css.map",
-    "main.1487fb65.js.map": "/static/js/main.1487fb65.js.map"
+    "main.4cc2ddba.css.map": "/static/css/main.4cc2ddba.css.map",
+    "main.74e30c01.js.map": "/static/js/main.74e30c01.js.map"
   },
   "entrypoints": [
-    "static/css/main.c501c8e3.css",
-    "static/js/main.1487fb65.js"
+    "static/css/main.4cc2ddba.css",
+    "static/js/main.74e30c01.js"
   ]
 }
