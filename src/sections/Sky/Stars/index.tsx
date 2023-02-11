@@ -12,7 +12,7 @@ function getArray(): Array<{ x: number; y: number }> {
   // const start = 0;
   const stop = Math.PI * 2; // radians
 
-  const resolution = 20; // how many points to connect
+  const resolution = 20; // how many points
   const step = stop / resolution; // angle increment per point
 
   for (let i = 0; i < resolution + 1; i++) {
@@ -23,8 +23,6 @@ function getArray(): Array<{ x: number; y: number }> {
       (Math.sin(angle) * Math.sqrt(Math.abs(Math.cos(angle)))) /
         (Math.sin(angle) + 1.4);
     const point = {
-      // x: r ,
-      // y: r * Math.cos(angle),
       x: r * Math.sin(angle) * 5,
       y: r * Math.cos(angle) * 5,
     };
@@ -34,12 +32,15 @@ function getArray(): Array<{ x: number; y: number }> {
 }
 
 const stars = Array.from({ length: 40 });
-// const heartCenter = randomInteger(20, 80);
-const heart = getArray();
+const heartArray = getArray();
+const heartStyles = (): React.CSSProperties => ({
+  left: `${randomInteger(35, 70)}%`,
+  bottom: `${randomInteger(35, 70)}%`,
+  opacity: `${randomInteger(0.4, 1)}`,
+});
 
 export const Stars = (): JSX.Element => {
   const startRef = useRef<HTMLDivElement>(null);
-
   return (
     <div
       data-animation-id="section-stars-wrapper"
@@ -58,15 +59,8 @@ export const Stars = (): JSX.Element => {
           />
         );
       })}
-      <div
-        className={styles.heart}
-        style={{
-          left: `${randomInteger(20, 80)}%`,
-          bottom: `${randomInteger(30, 80)}%`,
-          opacity: `${randomInteger(0.4, 1)}`,
-        }}
-      >
-        {heart.map(({ x, y }, id) => {
+      <div className={styles.heart} style={heartStyles()}>
+        {heartArray.map(({ x, y }, id) => {
           return (
             <Star
               key={id}
@@ -78,15 +72,8 @@ export const Stars = (): JSX.Element => {
           );
         })}
       </div>
-      <div
-        className={styles.heart}
-        style={{
-          left: `${randomInteger(20, 80)}%`,
-          bottom: `${randomInteger(30, 80)}%`,
-          opacity: `${randomInteger(0.4, 1)}`,
-        }}
-      >
-        {heart.map(({ x, y }, id) => {
+      <div className={styles.heart} style={heartStyles()}>
+        {heartArray.map(({ x, y }, id) => {
           return (
             <Star
               key={id}

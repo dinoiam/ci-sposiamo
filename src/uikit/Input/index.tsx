@@ -7,7 +7,7 @@ type Props = React.DetailedHTMLProps<
 >;
 
 export const Input = React.forwardRef<HTMLInputElement, Props>(
-  ({ placeholder, id, className, ...props }, ref): JSX.Element => {
+  ({ placeholder, id, className, children, ...props }, ref): JSX.Element => {
     return (
       <label htmlFor={id} className={styles.label}>
         <input
@@ -18,6 +18,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
           placeholder="&nbsp;"
         />
         <div className={styles.placeholder}>{placeholder}</div>
+        {children}
       </label>
     );
   }

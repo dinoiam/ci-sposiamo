@@ -1,6 +1,6 @@
 export interface UserInfoModel {
   name: string;
   n_person: number;
-  confermato: boolean | null;
+  confermato: boolean | undefined;
   notes: string;
 }

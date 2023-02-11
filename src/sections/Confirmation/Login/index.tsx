@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { Input } from "@/uikit/Input";
+import { Password } from "@/uikit/Password";
 import styles from "./style.module.scss";
 import { Button } from "@/uikit/Button";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -12,7 +13,7 @@ export const Login = (): JSX.Element => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const login = async (): Promise<void> => {
+  const login = useCallback(async (): Promise<void> => {
     const email = emailRef?.current?.value;
     const password = passwordRef?.current?.value;
     if (!email || !password) {
@@ -26,7 +27,14 @@ export const Login = (): JSX.Element => {
       setError("Email o password errati");
     }
     setLoading(false);
-  };
+  }, []);
+
+  const onKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>): void => {
+      event.key === "Enter" && login();
+    },
+    [login]
+  );
 
   return (
     <div className={styles.login}>
@@ -35,11 +43,12 @@ export const Login = (): JSX.Element => {
       </div>
       <div className={styles.form}>
         <Input type="email" placeholder="Email" id="email" ref={emailRef} />
-        <Input
+        <Password
           type="password"
           placeholder="Password"
           id="password"
           ref={passwordRef}
+          onKeyDown={onKeyDown}
         />
         <Button onClick={login} loading={loading}>
           Log in

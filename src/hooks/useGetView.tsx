@@ -14,7 +14,7 @@ export const useGetView = (): ViewModel => {
   const [userInfo] = useObjectVal<UserInfoModel>(
     ref(db, `userInfo/${user?.uid}`)
   );
-
+  console.log(userInfo);
   useEffect(() => {
     if (loading)
       setResult({
@@ -28,12 +28,12 @@ export const useGetView = (): ViewModel => {
       setResult({
         view: "loading",
       });
-    } else if (user && userInfo.confermato === null)
+    } else if (userInfo.confermato === undefined)
       setResult({
         view: "select",
         userInfo,
       });
-    else if (user && userInfo.confermato !== null)
+    else if (userInfo.confermato || !userInfo.confermato)
       setResult({
         view: "end",
         userInfo,
