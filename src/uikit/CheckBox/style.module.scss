@@ -1,0 +1,13 @@
+@import "src/style/palette";
+
+.checkbox {
+  position: relative;
+
+  &.loading {
+    opacity: 0.5;
+  }
+
+  .input {
+    margin-right: 0.8rem;
+  }
+}

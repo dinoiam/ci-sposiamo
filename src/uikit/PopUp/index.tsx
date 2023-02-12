@@ -16,14 +16,9 @@ export const PopUp = ({ children, onClose }: Props): JSX.Element => {
   }, []);
 
   return (
-    <div className={styles.popup} onClick={onClose}>
-      <div
-        onClick={(event) => {
-          event.stopPropagation();
-          event.preventDefault();
-        }}
-        className={styles.popup__content}
-      >
+    <div className={styles.popup}>
+      <div className={styles.outer} onClick={onClose} />
+      <div className={styles.popup__content}>
         {children}
         <button className={styles.close} onClick={onClose}>
           <img src={close} />

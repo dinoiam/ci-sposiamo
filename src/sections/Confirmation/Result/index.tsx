@@ -1,7 +1,8 @@
+import React, { useState } from "react";
 import { type UserInfoModel } from "@/models/FirebaseModel";
 import { Button } from "@/uikit/Button";
-import React, { useState } from "react";
 import { Confirmed } from "../Confirmed";
+import { NotConfirmed } from "../NotConfirmed";
 import { Select } from "../Select";
 import styles from "./style.module.scss";
 
@@ -26,11 +27,7 @@ export const Result = ({ userInfo }: Props): JSX.Element => {
           {userInfo.confermato ? (
             <Confirmed userInfo={userInfo} />
           ) : (
-            <div className={styles["not-confirmed"]}>
-              {userInfo.n_person > 1
-                ? "Purtroppo non sarete dei nostri :("
-                : "Purtroppo non sarai dei nostri :("}
-            </div>
+            <NotConfirmed userInfo={userInfo} />
           )}
         </>
       )}

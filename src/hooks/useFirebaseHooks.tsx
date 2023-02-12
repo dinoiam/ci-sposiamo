@@ -42,3 +42,26 @@ export const useChangeNotes = (): [(args: NotesParams) => void, boolean] => {
   }, []);
   return [change, loading];
 };
+
+interface PlusOneParams {
+  uid?: string;
+  value: boolean;
+}
+
+export const useChangePlusOne = (): [
+  (args: PlusOneParams) => void,
+  boolean
+] => {
+  const [loading, setLoading] = useState(false);
+  const change = useCallback(({ value, uid }: PlusOneParams) => {
+    setLoading(true);
+
+    const db = getDatabase();
+    update(ref(db, `userInfo/${uid}`), {
+      plus_one: value,
+    }).finally(() => {
+      setLoading(false);
+    });
+  }, []);
+  return [change, loading];
+};
