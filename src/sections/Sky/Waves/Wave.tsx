@@ -6,7 +6,7 @@ interface Props {
   id?: number;
   style?: React.CSSProperties;
 }
-export const Wave = ({ id, style }: Props): JSX.Element => {
+export const Wave2 = ({ id, style }: Props): JSX.Element => {
   return (
     <div
       className={styles[`wave-wrapper-${id}`]}
@@ -23,5 +23,21 @@ export const Wave = ({ id, style }: Props): JSX.Element => {
         }
       />
     </div>
+  );
+};
+
+export const Wave = ({ id, style }: Props): JSX.Element => {
+  return (
+    <div
+      data-animation-id={`section-sky__wave-${id}`}
+      className={`${styles.wave} ${styles[`wave-${id}`]}`}
+      style={
+        {
+          "--wave": id,
+          backgroundImage: `url(${wave})`,
+          ...style,
+        } as React.CSSProperties
+      }
+    />
   );
 };
