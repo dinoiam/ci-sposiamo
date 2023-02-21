@@ -4,11 +4,9 @@
 
 .cloud {
   --size: 1rem;
-  --padding: 4rem 1rem;
 
   @include ms {
     --size: 2rem;
-    --padding: 3rem;
   }
 
   @include m {
@@ -25,6 +23,5 @@
   .wrapper {
     width: 100%;
     background-color: $cloud;
-    padding: var(--padding);
   }
 }

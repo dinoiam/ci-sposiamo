@@ -20,8 +20,8 @@ export const useCloudAnimations = (appRef: RefObject<HTMLDivElement>): void => {
         .fromTo(
           ".plane-path",
           {
-            "stroke-dasharray": 1257,
-            "stroke-dashoffset": 1257,
+            "stroke-dasharray": 1199,
+            "stroke-dashoffset": 1199,
             ease: "none",
           },
           {

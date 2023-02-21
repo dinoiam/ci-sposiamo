@@ -3,9 +3,7 @@
 @import "src/style/media-queries.scss";
 
 .info {
-  .list {
-    margin-bottom: 1rem;
-  }
-  .iban {
-  }
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 0.4rem 6rem;
 }

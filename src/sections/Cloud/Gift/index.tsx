@@ -1,11 +1,37 @@
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
+import { PostCard } from "../PostCard";
 import styles from "./style.module.scss";
 
 export const Gift = (): JSX.Element => {
   return (
     <div data-animation-id="section-cloud__gift-info" className={styles.info}>
-      <div className={styles.list}>Lista nozze: Ometto Viaggiatore</div>
-      <p className={styles.iban}>IBAN: IT4323452352352523</p>
+      <PostCard
+        onIbanCopied={() => {
+          toast.info("Testo copiato!", {
+            position: "bottom-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            draggable: false,
+            progress: undefined,
+            theme: "colored",
+            toastId: "iban",
+          });
+        }}
+      />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={1000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };
