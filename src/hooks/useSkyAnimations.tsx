@@ -35,7 +35,7 @@ export const useSkyAnimations = (appRef: RefObject<HTMLDivElement>): void => {
         .timeline({
           scrollTrigger: {
             trigger: appRef.current,
-            endTrigger: "[data-animation-id='section-sky__wave-1'",
+            endTrigger: "[data-animation-id='section-sky__wave-wrapper-1'",
             start: "top top",
             end: "top top",
             scrub: 3,
@@ -43,27 +43,27 @@ export const useSkyAnimations = (appRef: RefObject<HTMLDivElement>): void => {
         })
         .add("waves")
         .fromTo(
-          "[data-animation-id='section-sky__wave-1']",
-          { backgroundPosition: "25rem" },
-          { backgroundPosition: `${window.innerWidth + 400 * 4}px 0` },
+          "[data-animation-id='section-sky__wave-wrapper-1']",
+          { x: 0 },
+          { x: "-200%" },
           "waves"
         )
         .fromTo(
-          "[data-animation-id='section-sky__wave-2']",
-          { backgroundPosition: "20rem" },
-          { backgroundPosition: `${window.innerWidth + 300 * -4}px 0` },
+          "[data-animation-id='section-sky__wave-wrapper-2']",
+          { x: "-100%" },
+          { x: "-170%" },
           "waves"
         )
         .fromTo(
-          "[data-animation-id='section-sky__wave-3']",
-          { backgroundPosition: "15rem" },
-          { backgroundPosition: `${window.innerWidth + 200 * 2}px 0` },
+          "[data-animation-id='section-sky__wave-wrapper-3']",
+          { x: "-30%" },
+          { x: "-130%" },
           "waves"
         )
         .fromTo(
-          "[data-animation-id='section-sky__wave-4']",
-          { backgroundPosition: "10rem" },
-          { backgroundPosition: `${window.innerWidth + 100 * -2}px 0` },
+          "[data-animation-id='section-sky__wave-wrapper-4']",
+          { x: "-140%" },
+          { x: "-180%" },
           "waves"
         );
     }, appRef);
