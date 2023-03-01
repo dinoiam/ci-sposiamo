@@ -1,21 +1,5 @@
 @import "src/style/palette";
 
-.confirmed {
+.not-confirmed {
   margin-bottom: 4rem;
-  display: block;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-
-  .notes {
-    margin-bottom: 0.5rem;
-  }
-
-  .save {
-    margin-bottom: 2rem;
-  }
-
-  .checkbox {
-    margin-bottom: 2rem;
-  }
 }
