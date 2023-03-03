@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8d21baa8.css",
-    "main.js": "/static/js/main.ae02e81a.js",
+    "main.js": "/static/js/main.f6f560be.js",
     "static/media/honey.png": "/static/media/honey.fc2edb87d47af8fa62bc.png",
     "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/static/media/Montserrat-Italic-VariableFont_wght.ef11b720b9a6cfb9a317.ttf",
     "static/media/MoonDance-Regular.ttf": "/static/media/MoonDance-Regular.69bc2883db3811002422.ttf",
@@ -24,10 +24,10 @@
     "static/media/copy.svg": "/static/media/copy.b5ddaace840f9f30385f41bc1f97f045.svg",
     "static/media/arrow-down.svg": "/static/media/arrow-down.db2a7c4f008a59253b0e5e2b3bb983a0.svg",
     "main.8d21baa8.css.map": "/static/css/main.8d21baa8.css.map",
-    "main.ae02e81a.js.map": "/static/js/main.ae02e81a.js.map"
+    "main.f6f560be.js.map": "/static/js/main.f6f560be.js.map"
   },
   "entrypoints": [
     "static/css/main.8d21baa8.css",
-    "static/js/main.ae02e81a.js"
+    "static/js/main.f6f560be.js"
   ]
 }
