@@ -4,9 +4,13 @@
   position: relative;
   color: $primary;
   background: $primary_light;
-  border-right: none;
-  border-radius: 35% 0 0 35%;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+  border: 0.1rem solid $primary;
+  border-radius: 20%;
 
   &:focus-visible {
     outline: none;

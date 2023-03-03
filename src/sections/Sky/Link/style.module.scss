@@ -5,12 +5,14 @@
 .link {
   --link: 3rem;
 
-  @include ms {
-    --link: 3.5rem;
-  }
+  @include hms {
+    @include ms {
+      --link: 3.5rem;
+    }
 
-  @include m {
-    --link: 3rem;
+    @include m {
+      --link: 3rem;
+    }
   }
 }
 

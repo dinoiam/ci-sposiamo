@@ -9,14 +9,16 @@
   --sun-width: 3rem;
   --sun-space: 3rem;
 
-  @include ms {
-    --sun-height: 5rem;
-    --sun-width: 5rem;
-    --sun-space: 5rem;
-  }
+  @include hms {
+    @include ms {
+      --sun-height: 5rem;
+      --sun-width: 5rem;
+      --sun-space: 5rem;
+    }
 
-  @include m {
-    --sun-space: 8rem;
+    @include m {
+      --sun-space: 8rem;
+    }
   }
 }
 

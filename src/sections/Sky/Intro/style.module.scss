@@ -5,8 +5,10 @@
 .label {
   --size: 4rem;
 
-  @include ms {
-    --size: 7rem;
+  @include hms {
+    @include ms {
+      --size: 7rem;
+    }
   }
 }
 

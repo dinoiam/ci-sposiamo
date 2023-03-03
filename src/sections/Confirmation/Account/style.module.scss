@@ -1,0 +1,36 @@
+@import "src/style/z-index";
+@import "src/style/palette";
+
+.account {
+  position: fixed;
+  bottom: 1rem;
+  z-index: z-index("login");
+  right: 1rem;
+  background-color: transparent;
+
+  .face {
+    width: 3rem;
+  }
+
+  .button {
+    position: relative;
+    color: $primary;
+    background: $primary_light;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: 0.1rem solid $primary;
+    border-radius: 20%;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .loading {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}

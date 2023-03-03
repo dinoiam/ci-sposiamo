@@ -7,12 +7,14 @@
 .cloud {
   --cloud: 10rem;
 
-  @include ms {
-    --cloud: 15rem;
-  }
+  @include hms {
+    @include ms {
+      --cloud: 15rem;
+    }
 
-  @include m {
-    --cloud: 20rem;
+    @include m {
+      --cloud: 20rem;
+    }
   }
 }
 

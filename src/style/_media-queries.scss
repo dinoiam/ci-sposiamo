@@ -34,3 +34,21 @@ $screen-l: 1440px;
     @content;
   }
 }
+
+@mixin hxs {
+  @media screen and (min-height: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin hs {
+  @media screen and (min-height: #{$screen-s}) {
+    @content;
+  }
+}
+
+@mixin hms {
+  @media screen and (min-height: #{$screen-ms}) {
+    @content;
+  }
+}
