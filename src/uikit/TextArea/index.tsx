@@ -29,7 +29,7 @@ export const TextArea = ({
       <textarea
         className={styles.textarea}
         value={value}
-        placeholder="Latte, Pesce, crostacei, ..."
+        placeholder="Esempio: Latte, Pesce, crostacei, ..."
         onChange={(event) => {
           const value = event.target.value;
           setTyping(true);
