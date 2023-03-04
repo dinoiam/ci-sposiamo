@@ -32,6 +32,12 @@ export const Gift = (): JSX.Element => {
         pauseOnHover
         theme="colored"
       />
+      <div className={styles.phrase}>
+        Se volete mandarci a<br />
+        "quel paese"
+        <br />
+        cliccate sulla cartolina!!
+      </div>
     </div>
   );
 };

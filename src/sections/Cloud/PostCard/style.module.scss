@@ -15,6 +15,22 @@
   margin-bottom: 0.7rem;
   padding-bottom: 0.4rem;
   position: relative;
+
+  > p {
+    font-size: 0.5rem;
+
+    @include xs {
+      font-size: 0.8rem;
+    }
+
+    @include s {
+      font-size: 1.1rem;
+    }
+
+    @include ms {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .svg {
@@ -34,9 +50,11 @@
 
 .postcard {
   background-color: transparent;
-  display: inline-block;
+  display: block;
   perspective: 1000px;
-
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
   &:not(.show-back) {
     animation: wiggle 2s ease-in-out infinite;
   }
@@ -53,7 +71,6 @@
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  background-color: $primary-light;
   box-shadow: 0px 0px 42px 0px rgba($primary-dark, 0.75);
 }
 
@@ -66,6 +83,10 @@
 .post-card-front {
   cursor: pointer;
 }
+.post-card-face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 
 .post-card-back {
   position: absolute;
@@ -73,7 +94,6 @@
   height: 100%;
   top: 0;
   right: 0;
-  backface-visibility: hidden;
   background-color: $sand-variant;
   border: 0.4rem solid $sand-variant;
   transform: rotateY(180deg);
@@ -157,7 +177,7 @@
   width: 1.7rem;
   height: 2rem;
   border: 0.1rem solid $primary;
-  outline-style: dashed;
+  outline-style: dotted;
   outline-color: $primary;
   background-color: #cb997e;
   top: 0;

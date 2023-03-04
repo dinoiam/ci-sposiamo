@@ -9,7 +9,7 @@ interface Props {
   onIbanCopied: () => void;
 }
 
-const IBAN = "IT4323452352352523";
+const IBAN = "IT08D0306964716100000012517";
 
 export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
   const [showBack, setShowBack] = useState(false);
@@ -21,10 +21,14 @@ export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
       }}
     >
       <div className={styles.inner}>
-        <div className={styles["post-card-front"]}>
+        <div
+          className={`${styles["post-card-face"]} ${styles["post-card-front"]}`}
+        >
           <img src={honey} />
         </div>
-        <div className={styles["post-card-back"]}>
+        <div
+          className={`${styles["post-card-face"]} ${styles["post-card-back"]}`}
+        >
           <div className={styles["postcard-info"]}>
             <p className={styles.message}>
               I soldi non fanno la felicità, ma il viaggio di nozze sì :)
@@ -34,21 +38,23 @@ export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
               <div className={styles.stamp}>
                 <img className={styles.logo} src={logo} />
               </div>
-              <a
-                className={styles.agency}
-                href="https://goo.gl/maps/Q56VjxQg6a18s78X9"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) => {
-                  event.stopPropagation();
-                }}
-              >
+              <div className={styles.agency}>
                 <div>
-                  <p>Lista: Dinoia - Giannini</p> Ometto Viaggiatore
-                  <ExternalLink className={styles.svg} />
+                  <p>Lista: Dinoia - Giannini</p>
+                  <a
+                    href="https://goo.gl/maps/Q56VjxQg6a18s78X9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                    }}
+                  >
+                    Ometto Viaggiatore
+                    <ExternalLink className={styles.svg} />
+                  </a>
                 </div>
-              </a>
-              <p
+              </div>
+              <div
                 className={styles.iban}
                 onClick={async (event) => {
                   event?.stopPropagation();
@@ -56,8 +62,11 @@ export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
                   onIbanCopied?.();
                 }}
               >
-                IBAN: {IBAN} <Copy className={styles.svg} />
-              </p>
+                IBAN:{" "}
+                <p>
+                  {IBAN} <Copy className={styles.svg} />
+                </p>
+              </div>
             </div>
           </div>
         </div>

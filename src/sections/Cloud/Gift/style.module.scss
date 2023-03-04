@@ -3,7 +3,13 @@
 @import "src/style/media-queries.scss";
 
 .info {
-  display: flex;
-  justify-content: center;
   padding: 0.4rem 0.4rem 6rem;
+
+  .phrase {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    color: $primary;
+    text-align: center;
+    font-family: "Montserrat-Italic", sans-serif;
+  }
 }
