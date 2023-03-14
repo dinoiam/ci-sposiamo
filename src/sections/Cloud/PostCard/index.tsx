@@ -15,6 +15,7 @@ export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
   const [showBack, setShowBack] = useState(false);
   return (
     <div
+      data-animation-id="section-cloud__gift-info"
       className={`${styles.postcard} ${showBack ? styles["show-back"] : ""}`}
       onClick={() => {
         setShowBack(!showBack);

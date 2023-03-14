@@ -5,7 +5,7 @@ import styles from "./style.module.scss";
 
 export const Gift = (): JSX.Element => {
   return (
-    <div data-animation-id="section-cloud__gift-info" className={styles.info}>
+    <div className={styles.info}>
       <PostCard
         onIbanCopied={() => {
           toast.info("Testo copiato!", {
