@@ -8,11 +8,13 @@ interface Props {
   onChange: (event: string) => void;
   isLoading: boolean;
   defaultValue?: string;
+  placeholder?: string;
 }
 export const TextArea = ({
   isLoading,
   onChange,
   defaultValue = "",
+  placeholder = "",
 }: Props): JSX.Element => {
   const [changes, setChanges] = useState(false);
   const [value, setValue] = useState(defaultValue);
@@ -29,7 +31,7 @@ export const TextArea = ({
       <textarea
         className={styles.textarea}
         value={value}
-        placeholder="Esempio: Latte, Pesce, crostacei, ..."
+        placeholder={placeholder}
         onChange={(event) => {
           const value = event.target.value;
           setTyping(true);
@@ -42,10 +44,14 @@ export const TextArea = ({
         {typing || isLoading ? (
           <img src={typingGif} />
         ) : (
-          <>
-            <Saved />
-            {changes && <p>modifiche salvate</p>}
-          </>
+          <div className={styles.saved}>
+            {changes && (
+              <div className={styles.saved}>
+                <Saved />
+                <p>modifiche salvate!</p>
+              </div>
+            )}
+          </div>
         )}
       </div>
     </div>

@@ -8,6 +8,7 @@
   text-align: center;
 
   .notes {
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
 
@@ -16,6 +17,17 @@
   }
 
   .checkbox {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .name-wrapper {
+    .name {
+      margin: auto;
+      display: block;
+      margin-top: 0.5rem;
+      outline: none;
+      height: 2rem;
+      text-align: center;
+    }
   }
 }

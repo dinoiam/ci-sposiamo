@@ -6,50 +6,55 @@
   border: 1px solid $primary-dark;
   height: 8rem;
   background: white;
-}
+  padding: 0.3rem;
 
-textarea {
-  font-family: "Montserrat", sans-serif;
-  resize: none;
-  height: 6rem;
-  width: 100%;
-  border: none;
+  textarea {
+    font-family: "Montserrat", sans-serif;
+    resize: none;
+    height: calc(100% - 1.5rem);
+    width: 100%;
+    border: none;
+    padding: 0;
 
-  &:focus-visible {
-    outline: none;
-  }
-}
-.status {
-  width: 100%;
-  background-color: $primary-light;
-  height: 1.5rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  img {
-    border-radius: 50%;
+    &:focus-visible {
+      outline: none;
+    }
   }
 
-  img,
-  svg {
-    width: 1.3rem;
-    height: 1.3rem;
-  }
-
-  p {
+  .status {
+    width: 100%;
+    background-color: $primary-light;
+    height: 1.5rem;
     position: absolute;
-    top: 50%;
-    left: 30px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    transform: translateY(-50%);
-    animation: fadeOut 2.5s forwards;
-    opacity: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+      border-radius: 50%;
+    }
+
+    img,
+    svg {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      transform: translateY(-50%);
+    }
+    .saved {
+      animation: fadeOut 2.5s forwards;
+      opacity: 0;
+    }
   }
 }
 

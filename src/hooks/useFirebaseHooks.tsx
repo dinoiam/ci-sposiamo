@@ -65,3 +65,25 @@ export const useChangePlusOne = (): [
   }, []);
   return [change, loading];
 };
+
+interface PlusOneNameParams {
+  uid?: string;
+  value: string;
+}
+export const useChangePlusOneName = (): [
+  (args: PlusOneNameParams) => void,
+  boolean
+] => {
+  const [loading, setLoading] = useState(false);
+  const change = useCallback(({ value, uid }: PlusOneNameParams) => {
+    setLoading(true);
+
+    const db = getDatabase();
+    update(ref(db, `userInfo/${uid}`), {
+      plus_one_name: value,
+    }).finally(() => {
+      setLoading(false);
+    });
+  }, []);
+  return [change, loading];
+};
