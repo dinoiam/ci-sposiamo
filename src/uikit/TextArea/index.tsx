@@ -9,19 +9,19 @@ interface Props {
   isLoading: boolean;
   defaultValue?: string;
   placeholder?: string;
+  timestamp?: number;
 }
 export const TextArea = ({
   isLoading,
   onChange,
   defaultValue = "",
   placeholder = "",
+  timestamp,
 }: Props): JSX.Element => {
-  const [changes, setChanges] = useState(false);
   const [value, setValue] = useState(defaultValue);
   const [typing, setTyping] = useState(false);
 
   const debouncedCallback = useDebouncedCallback((value: string) => {
-    setChanges(true);
     onChange(value);
     setTyping(false);
   }, 500);
@@ -41,18 +41,14 @@ export const TextArea = ({
       />
 
       <div className={styles.status}>
-        {typing || isLoading ? (
-          <img src={typingGif} />
-        ) : (
-          <div className={styles.saved}>
-            {changes && (
-              <div className={styles.saved}>
-                <Saved />
-                <p>modifiche salvate!</p>
-              </div>
+        {typing || isLoading ? <img src={typingGif} /> : <Saved />}
+        <div className={styles.saved}>
+          <p>
+            {timestamp && (
+              <>Ultimo salvataggio: {new Date(timestamp).toLocaleString()}</>
             )}
-          </div>
-        )}
+          </p>
+        </div>
       </div>
     </div>
   );

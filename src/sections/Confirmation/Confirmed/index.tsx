@@ -60,6 +60,7 @@ export const Confirmed = ({ userInfo }: Props): JSX.Element => {
         }}
         isLoading={isLoading}
         defaultValue={userInfo.notes}
+        timestamp={userInfo.createdAt}
       />
     </div>
   );

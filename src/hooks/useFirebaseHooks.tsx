@@ -1,4 +1,4 @@
-import { getDatabase, ref, update } from "firebase/database";
+import { getDatabase, ref, serverTimestamp, update } from "firebase/database";
 import { useCallback, useState } from "react";
 
 interface ConfirmationParams {
@@ -36,6 +36,7 @@ export const useChangeNotes = (): [(args: NotesParams) => void, boolean] => {
     const db = getDatabase();
     update(ref(db, `userInfo/${uid}`), {
       notes: value,
+      createdAt: serverTimestamp(),
     }).finally(() => {
       setLoading(false);
     });

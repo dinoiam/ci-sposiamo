@@ -5,4 +5,5 @@ export interface UserInfoModel {
   plus_one: boolean | undefined;
   plus_one_name: string | undefined;
   notes: string;
+  createdAt: number | undefined;
 }
