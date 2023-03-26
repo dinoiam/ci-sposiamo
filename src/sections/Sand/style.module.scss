@@ -23,6 +23,7 @@
   overflow: hidden;
   font-size: var(--size);
   font-family: "Montserrat", sans-serif;
+  font-style: italic;
   color: $primary;
   display: flex;
   flex-direction: column;
@@ -36,6 +37,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   font-family: "Montserrat", sans-serif;
+  font-style: italic;
   align-items: center;
   padding-bottom: var(--padding-info);
 }
