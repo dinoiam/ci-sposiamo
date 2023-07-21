@@ -63,7 +63,7 @@ export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
                   onIbanCopied?.();
                 }}
               >
-                IBAN:{" "}
+                IL NOSTRO IBAN:{" "}
                 <p>
                   {IBAN} <Copy className={styles.svg} />
                 </p>
