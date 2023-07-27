@@ -41,7 +41,9 @@ export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
               </div>
               <div className={styles.agency}>
                 <div>
-                  <p>Lista: Dinoia - Giannini</p>
+                  <p>
+                    <b>Lista:</b> Dinoia - Giannini
+                  </p>
                   <a
                     href="https://goo.gl/maps/Q56VjxQg6a18s78X9"
                     target="_blank"
@@ -63,9 +65,11 @@ export const PostCard = ({ onIbanCopied }: Props): JSX.Element => {
                   onIbanCopied?.();
                 }}
               >
-                Il nostro iban:{" "}
                 <p>
-                  {IBAN} <Copy className={styles.svg} />
+                  <b>Intestatario:</b>Nicoletta Giannini
+                </p>
+                <p>
+                  <b>IBAN:</b> {IBAN} <Copy className={styles.svg} />
                 </p>
               </div>
             </div>

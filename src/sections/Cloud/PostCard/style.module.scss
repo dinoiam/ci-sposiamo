@@ -17,7 +17,7 @@
   position: relative;
 
   > p {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
 
     @include xs {
       font-size: 0.8rem;
@@ -121,6 +121,11 @@
   height: 100%;
   width: 100%;
   align-items: center;
+
+  b {
+    color: black;
+    font-weight: bold;
+  }
 }
 
 .message {
@@ -128,12 +133,7 @@
   font-size: 0.8rem;
   display: flex;
   align-items: center;
-  width: 35%;
-
-  @include xs {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
+  width: 26%;
 
   @include s {
     font-size: 1.2rem;
@@ -142,6 +142,7 @@
 
   @include ms {
     font-size: 1.4rem;
+    width: 35%;
   }
 }
 
