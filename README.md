@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# 💍 Ci Sposiamo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal project I built for my wedding to share event details with guests.  
+It was a fun way to combine my passion for web development with a real-life event.  
+Feel free to take inspiration by it.
+
+## 🚀 Stack
+
+- **React**
+- **Node.js**
+- **TypeScript**
+- **GSAP** (animations – open source)
+
+## ✨ Features
+
+- Guest information page
+- RSVP form with basic validation
+- Custom design inspired by our wedding theme
+- Smooth animations with **GSAP**
+
+## 📸 Screenshots
+
+![Homepage](./screenshots/homepage.png)  
+![Homepage 2](./screenshots/homepage_2.png)  
+![RSVP Form](./screenshots/rsvp.png)
+
+---
 
 ## Available Scripts
 
